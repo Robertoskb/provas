@@ -13,7 +13,7 @@ def gerar(a, b):
     dim = diminuir(a, b)
 
     ad = [dim, aum]
-    for i in range(b*2+1):
+    while True:
         try:
             value = ad.pop()
             yield next(value)
@@ -27,4 +27,4 @@ def gerar(a, b):
 A = int(input())
 B = int(input())
 
-print(f'[{", ".join(map(str, gerar(A, B)))}]')
+print(f'[{" ".join(map(str, gerar(A, B)))}]')
