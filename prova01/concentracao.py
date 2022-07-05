@@ -1,21 +1,8 @@
-def aumentar(a, b):
-    for i in range(a, b+1):
-        yield i
-
-
-def diminuir(a, b):
-    for i in range(b, a-1, -1):
-        yield i
-
-
 def gerar(a, b):
-    aum = aumentar(a, b)
-    dim = diminuir(a, b)
-
-    ad = [dim, aum]
+    ad = [iter(range(b, a-1, -1)), iter(range(a, b+1))]
     while True:
+        value = ad.pop()
         try:
-            value = ad.pop()
             yield next(value)
 
         except StopIteration:
