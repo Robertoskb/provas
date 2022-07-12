@@ -3,10 +3,7 @@ S = int(input())
 E = int(input())
 
 altura = 0
-while True:
+while altura + E < P:
     nova_altura = altura + S
     print(f'{altura} {nova_altura if nova_altura < P else "saiu"}')
     altura = nova_altura - E
-
-    if nova_altura >= P:
-        break
